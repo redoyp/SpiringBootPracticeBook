@@ -32,7 +32,7 @@ public class BookController {
     }
 
     // 책 단건 조회
-    // = @RequestMapping(method = RequestMethod.GET, name = "/books/{id}")
+    // = @RequestMapping(method = RequestMethod.GET, value = "/books/{id}")
     @GetMapping("/books/{id}")
     public String getBookById(@PathVariable("id") String id, Model model) {
         Book book = bookService.getBookById(id);
@@ -43,7 +43,7 @@ public class BookController {
     }
 
     // 책 단건 저장
-    // = @RequestMapping(method = RequestMethod.POST, name = "/books")
+    // = @RequestMapping(method = RequestMethod.POST, value = "/books")
     @PostMapping("/books")
     public String saveBook(@ModelAttribute("book") AddBookRequest request) {
         bookService.saveBook(request);
